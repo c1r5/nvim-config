@@ -16,17 +16,3 @@ end, { desc = "Debug Go Test" })
 vim.keymap.set("n", "<leader>du", function()
   require("dapui").toggle()
 end, { desc = "Toggle DAP UI" })
-
--- Golang Keymaps
-
--- Run current Go file (dev mode)
-vim.keymap.set("n", "<leader>cgr", function()
-  vim.cmd("w") -- Save the file first
-  vim.cmd("!go run %")
-end, { desc = "Go: Run current file" })
-
--- Build Go project (build mode)
-vim.keymap.set("n", "<leader>cb", function()
-  vim.cmd("w") -- Save the file first
-  vim.cmd("!go build ./...")
-end, { desc = "Go: Build project" })

@@ -1,12 +1,22 @@
 return {
-  {
-    "folke/noice.nvim",
-    -- Classic commandline position instead of pop-up
-    opts = {
-      cmdline = {
-        view = "cmdline", -- moves command line to bottom
+  "folke/noice.nvim",
+  opts = {
+    cmdline = {
+      view = "cmdline", -- força o uso do cmdline clássico
+    },
+    messages = {
+      enabled = true,
+      view_search = false,
+    },
+    routes = {
+      {
+        filter = {
+          event = "msg_show",
+          kind = "",
+          find = "shell command",
+        },
+        opts = { skip = true },
       },
-      presets = { command_palette = false }, -- tab completions for commandline don't pop-up at top
     },
   },
 }
